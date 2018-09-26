@@ -11,10 +11,10 @@ namespace SchoolSimulation
             Department = department;
         }
 
-        public void CreateSalaryReport(int salary, float tax)
+        public void CreateSalaryReport(Employee employee)
         {
-            float _salaryReport = salary * tax;
-            Console.WriteLine(_salaryReport);
+            float _salaryReport = employee.Salary * (1 - employee.Tax);
+            Console.WriteLine(@"{0} employee's net salary: {1}", employee.Name, _salaryReport);
         }
 
         public string GetId()
@@ -24,7 +24,7 @@ namespace SchoolSimulation
 
         public override string ToString()
         {
-            return base.ToString() + "StudentClass:" + Department;
+            return base.ToString() + "Department:" + Department + ", ";
         }
     }
 }

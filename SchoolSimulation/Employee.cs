@@ -29,7 +29,7 @@ namespace SchoolSimulation
             return "Name:" + Name + ", " +
                     "Birth of date:" + BirtDate + ", " +
                     "Salary:" + Salary + ", " +
-                    "Tax:" + Tax; 
+                    "Tax:" + Tax + ", "; 
         }
     }  
 }

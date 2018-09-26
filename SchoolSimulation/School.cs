@@ -12,7 +12,7 @@ namespace SchoolSimulation
             {
                 if (student.ClassName == studentClass.Name)
                 {
-                    Console.WriteLine(student.Name);
+                    Console.WriteLine(@"{0} student belong to the {1}.", student.Name, studentClass.Name);
                 }
             }
         }    

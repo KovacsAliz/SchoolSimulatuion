@@ -27,7 +27,7 @@ namespace SchoolSimulation
         public override string ToString()
         {
             return "Name:" + Name + ", " +
-                    "Birth of date:" + BirthDate;
+                    "Birth of date:" + BirthDate + ", ";
         }
     }
 }

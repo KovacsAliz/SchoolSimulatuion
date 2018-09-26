@@ -13,8 +13,11 @@ namespace SchoolSimulation
             CreatorClass creator = new CreatorClass();
             School school = new School();
             creator.CreatSchool();
+            Console.WriteLine();
             creator.PrintResult();
+            Console.WriteLine();
             school.GetStudentNameOfClass(creator.studentClasses[2], creator.students);
+            Console.WriteLine();
             Console.ReadKey();
         }
     }

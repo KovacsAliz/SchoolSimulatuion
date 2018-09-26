@@ -13,10 +13,10 @@ namespace SchoolSimulation
         public List<Teacher> teachers = new List<Teacher>(5);
         public List<Student> students = new List<Student>(20);
 
-        public Director director = new Director("Papp Gábor", new DateTime(1965, 11, 20), 450000, 30, "Math");
+        public Director director = new Director("Papp Gábor", new DateTime(1965, 11, 20), 450000, 0.30F, "Math", "Director");
 
-        public Administrator HRadmin = new Administrator("Tóth Virág", new DateTime(1990, 03, 21), 300000, 28, "HR");
-        public Administrator FinancialSpecialist = new Administrator("Herceg Tamás", new DateTime(1996, 01, 01), 280000, 26, "FIN");
+        public Administrator HRadmin = new Administrator("Tóth Virág", new DateTime(1990, 03, 21), 300000, 0.28F, "HR");
+        public Administrator FinancialSpecialist = new Administrator("Herceg Tamás", new DateTime(1996, 01, 01), 280000, 0.26F, "FIN");
 
         public void CreatSchool()
         {
@@ -25,11 +25,11 @@ namespace SchoolSimulation
             studentClasses.Add(new StudentClass("ThirdClass", "Tóth Gabriella"));
             studentClasses.Add(new StudentClass("FourthClass", "Szalma Ibolya"));
 
-            teachers.Add(new Teacher("Kiss Péter", new DateTime(1974, 09, 10), 25, 250000, "Math"));
-            teachers.Add(new Teacher("Gábor Ágnes", new DateTime(1972, 08, 15), 27, 250000, "Biology"));
-            teachers.Add(new Teacher("Hasznos Boglárka", new DateTime(1990, 01, 28), 24, 180000, "History"));
-            teachers.Add(new Teacher("Tóth Gabriella", new DateTime(1989, 03, 22), 26, 230000, "Phisics"));
-            teachers.Add(new Teacher("Szalma Ibolya", new DateTime(1978, 04, 02), 25, 280000, "English"));
+            teachers.Add(new Teacher("Kiss Péter", new DateTime(1974, 09, 10), 250000, 0.25F, "Math"));
+            teachers.Add(new Teacher("Gábor Ágnes", new DateTime(1972, 08, 15), 250000, 0.27F, "Biology"));
+            teachers.Add(new Teacher("Hasznos Boglárka", new DateTime(1990, 01, 28), 180000, 0.24F, "History"));
+            teachers.Add(new Teacher("Tóth Gabriella", new DateTime(1989, 03, 22), 230000, 0.26F, "Physics"));
+            teachers.Add(new Teacher("Szalma Ibolya", new DateTime(1978, 04, 02), 280000, 0.25F, "English"));
 
             students.Add(new Student("A", new DateTime(2011, 02, 21), "FirstClass"));
             students.Add(new Student("B", new DateTime(2011, 03, 11), "FirstClass"));
@@ -58,20 +58,25 @@ namespace SchoolSimulation
 
         public void PrintResult()
         {
-            Console.WriteLine(director.ToString());
-            Console.WriteLine(HRadmin.ToString());
-            Console.WriteLine(FinancialSpecialist.ToString());
+            Console.WriteLine(director.ToString() + "Id: " + director.GetId());
+            Console.WriteLine(HRadmin.ToString() + "Id: " + HRadmin.GetId());
+            Console.WriteLine(FinancialSpecialist.ToString() + "Id: " + FinancialSpecialist.GetId());
 
             foreach (var student in students)
             {
                 Console.WriteLine(student.ToString() + "Id: " + student.GetId());
             }
+            Console.WriteLine();
 
             foreach (var teacher in teachers)
             {
                 Console.WriteLine(teacher.ToString() + "Id: " + teacher.GetId());
+                FinancialSpecialist.CreateSalaryReport(teacher);
+                Console.WriteLine();
             }
-
+            FinancialSpecialist.CreateSalaryReport(HRadmin);
+            Console.WriteLine();
+            FinancialSpecialist.CreateSalaryReport(FinancialSpecialist);
         }
     }
 }

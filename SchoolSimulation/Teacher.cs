@@ -18,7 +18,7 @@ namespace SchoolSimulation
 
         public override string ToString()
         {
-            return base.ToString() + "Subject:" + Subject; 
+            return base.ToString() + "Subject:" + Subject + ", "; 
         }
     }
 }
