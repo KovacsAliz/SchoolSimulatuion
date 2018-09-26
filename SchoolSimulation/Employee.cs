@@ -9,9 +9,6 @@ namespace SchoolSimulation
         public int Salary { get; set; }
         public float Tax { get; set; }
         public string Id { get; set; }
-        public bool HasMscDegree { get; set; }
-        public bool HasBADegree { get; set; }
-        public bool IsTeaching { get; set; }
         private static int _idCounter = 1;
 
         public Employee(string name, DateTime birthDate, int salary, float tax)

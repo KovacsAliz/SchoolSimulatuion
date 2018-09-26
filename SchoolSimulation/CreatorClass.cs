@@ -1,25 +1,29 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SchoolSimulation
 {
     public class CreatorClass
     {
         public List<StudentClass> studentClasses = new List<StudentClass>(4);
-        public List<EmployeeDepartment> employeeDepartments = new List<EmployeeDepartment>(5);
+        public List<EmployeeDepartment> employeeDepartments = new List<EmployeeDepartment>(2);
         public List<Teacher> teachers = new List<Teacher>(5);
         public List<Student> students = new List<Student>(20);
 
-        public Director director = new Director("Papp Gábor", new DateTime(1965, 11, 20), 450000, 0.30F, "Math", "Director");
+        public Director director;
 
-        public Administrator HRadmin = new Administrator("Tóth Virág", new DateTime(1990, 03, 21), 300000, 0.28F, "HR");
-        public Administrator FinancialSpecialist = new Administrator("Herceg Tamás", new DateTime(1996, 01, 01), 280000, 0.26F, "FIN");
+        public Administrator HRadmin;
+        public Administrator FinancialSpecialist;
 
         public void CreatSchool()
         {
+            director = new Director("Papp Gábor", new DateTime(1965, 11, 20), 450000, 0.30F, "Math", "Director");
+            HRadmin = new Administrator("Tóth Virág", new DateTime(1990, 03, 21), 300000, 0.28F, "HR");
+            FinancialSpecialist = new Administrator("Herceg Tamás", new DateTime(1996, 01, 01), 280000, 0.26F, "Financial");
+
+            employeeDepartments.Add(new EmployeeDepartment("HR"));
+            employeeDepartments.Add(new EmployeeDepartment("Financial"));
+
             studentClasses.Add(new StudentClass("FirstClass", "Kiss Péter"));
             studentClasses.Add(new StudentClass("SecondClass", "Gábor Ágnes"));
             studentClasses.Add(new StudentClass("ThirdClass", "Tóth Gabriella"));

@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SchoolSimulation
 {
@@ -18,6 +14,7 @@ namespace SchoolSimulation
             Console.WriteLine();
             school.GetStudentNameOfClass(creator.studentClasses[2], creator.students);
             Console.WriteLine();
+            school.GetStudentNameOfClass(creator.studentClasses[0], creator.students);
             Console.ReadKey();
         }
     }

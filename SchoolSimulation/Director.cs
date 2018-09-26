@@ -6,7 +6,6 @@ namespace SchoolSimulation
     {
         public string Subject { get; set; }
         public string Position { get; set; }
-        //private static Director director;
 
         public Director(string name, DateTime birthDate, int salary, float tax, string subject, string position) 
             : base(name, birthDate, salary, tax)

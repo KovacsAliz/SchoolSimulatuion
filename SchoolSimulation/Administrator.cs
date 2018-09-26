@@ -14,7 +14,7 @@ namespace SchoolSimulation
         public void CreateSalaryReport(Employee employee)
         {
             float _salaryReport = employee.Salary * (1 - employee.Tax);
-            Console.WriteLine(@"{0} employee's net salary: {1}", employee.Name, _salaryReport);
+            Console.WriteLine(@"{0}'s net salary: {1} Ft", employee.Name, _salaryReport);
         }
 
         public string GetId()
