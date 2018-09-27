@@ -10,6 +10,7 @@ namespace SchoolSimulation
         public float Tax { get; set; }
         public string Id { get; set; }
         private static int _idCounter = 1;
+        public char FirstLetter { get { return Name[0]; } set { FirstLetter = value; } }
 
         public Employee(string name, DateTime birthDate, int salary, float tax)
         {
@@ -17,7 +18,7 @@ namespace SchoolSimulation
             BirtDate = birthDate;
             Salary = salary;
             Tax = tax;
-            Id = Name + _idCounter;
+            Id =  FirstLetter.ToString() + _idCounter;
             _idCounter++;
         }
 
